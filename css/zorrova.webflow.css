@@ -860,7 +860,11 @@ img {
 
 .menu-link:hover {
   opacity: .75;
-  transform: scale(1.05);
+  transform: translate(2px);
+}
+
+.menu-link.w--current {
+  color: var(--blue-grey);
 }
 
 .navbar {
@@ -975,9 +979,12 @@ img {
 
 .tag-sm.intro {
   z-index: 1;
+  pointer-events: none;
+  letter-spacing: 2px;
   border-style: none;
   padding-left: 0;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 130%;
   position: relative;
 }
 
@@ -1059,6 +1066,7 @@ img {
 
 .div-hide {
   z-index: 1;
+  pointer-events: auto;
   position: relative;
   overflow: hidden;
 }
@@ -1072,7 +1080,9 @@ img {
 }
 
 .span-text {
+  pointer-events: none;
   color: var(--light-grey);
+  font-size: 5rem;
   display: inline-block;
 }
 
@@ -1108,6 +1118,10 @@ img {
   color: var(--light-grey);
   text-align: left;
   display: block;
+}
+
+.span-text.duo {
+  font-size: 3.5rem;
 }
 
 .image-zorrova {
@@ -1616,6 +1630,7 @@ img {
 .title-video.new {
   grid-column-gap: 0rem;
   grid-row-gap: 0rem;
+  pointer-events: auto;
   color: var(--light-grey);
   position: absolute;
   top: auto;
@@ -1775,6 +1790,7 @@ img {
 
 .paragraph-2 {
   z-index: 2;
+  display: block;
   position: static;
   top: 50%;
   bottom: auto;
@@ -1970,8 +1986,12 @@ img {
 
 .lottie-wrapper {
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  max-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  position: relative;
 }
 
 .lottie-wrapper.test, .lottie-wrapper.test-copy {
@@ -1982,6 +2002,13 @@ img {
   bottom: 0%;
   left: 0%;
   right: 0%;
+}
+
+.lottie-wrapper.duo {
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  max-height: 120vh;
 }
 
 .vrideo-promo {
@@ -2169,7 +2196,36 @@ img {
   display: flex;
 }
 
-._2-lottie, ._3-lottie, ._5-lottie, ._4-lottie {
+._2-lottie {
+  z-index: 0;
+  opacity: 1;
+  object-fit: cover;
+  flex: 0 auto;
+  width: 178vh;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+}
+
+.lottie {
+  z-index: 0;
+  opacity: 1;
+  filter: grayscale(0%);
+  cursor: pointer;
+  width: 100vw;
+  transition: all .3s;
+  position: static;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: hidden;
+}
+
+._5-lottie, ._4-lottie {
   z-index: 0;
   opacity: 1;
   object-fit: cover;
@@ -2302,8 +2358,11 @@ img {
 
 .player {
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  display: block;
   overflow: hidden;
 }
 
@@ -2322,13 +2381,20 @@ img {
   right: 0%;
 }
 
+.modal-content.vimeo {
+  flex-flow: column;
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+}
+
 .play-arrow {
   z-index: 2;
   width: 65px;
   position: absolute;
 }
 
-.modal-video {
+.modal {
   z-index: 9;
   background-color: rgba(0, 0, 0, .8);
   justify-content: center;
@@ -2343,8 +2409,13 @@ img {
   right: auto;
 }
 
+.modal.vimeo {
+  display: none;
+}
+
 .wrapper-play-icon {
   z-index: 5;
+  pointer-events: none;
   cursor: pointer;
   border-radius: 80px;
   justify-content: center;
@@ -2381,13 +2452,14 @@ img {
 }
 
 .video-wrapper {
-  height: 100vh;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
 
 .darken {
   z-index: 1;
+  pointer-events: none;
   background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .5));
   width: 100%;
   height: 100%;
@@ -2426,6 +2498,54 @@ img {
   margin-top: -4px;
   margin-bottom: -4px;
   margin-right: 6px;
+}
+
+.section-2 {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+._3-lottie-b {
+  z-index: 0;
+  object-fit: cover;
+  flex: 0 auto;
+  width: 100vw;
+}
+
+.motorcycle {
+  width: 250vw;
+  height: 250vh;
+}
+
+.mini-wrap {
+  z-index: 0;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 50%;
+  height: 100%;
+  max-height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-wrap._2 {
+  justify-content: center;
+  align-items: center;
+}
+
+.player-vimeo {
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
@@ -2801,7 +2921,20 @@ img {
     background-color: var(--blue-grey);
   }
 
-  .lottie-wrapper, .vrideo-promo {
+  .lottie-wrapper {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-height: none;
+  }
+
+  .lottie-wrapper.duo {
+    height: 200vh;
+    max-height: 100vh;
+  }
+
+  .vrideo-promo {
     overflow: hidden;
   }
 
@@ -2868,7 +3001,25 @@ img {
     left: auto;
   }
 
-  ._2-lottie, ._3-lottie, ._5-lottie, ._4-lottie {
+  ._2-lottie {
+    object-fit: cover;
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: auto;
+  }
+
+  .lottie {
+    width: 178vh;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: auto;
+  }
+
+  ._5-lottie, ._4-lottie {
     object-fit: cover;
     top: 0%;
     bottom: 0%;
@@ -2882,6 +3033,19 @@ img {
 
   .gallery-icon-b {
     width: 32px;
+  }
+
+  ._3-lottie-b {
+    object-fit: cover;
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: auto;
+  }
+
+  .mini-wrap {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -3012,7 +3176,8 @@ img {
   }
 
   .span-text {
-    font-size: 10vw;
+    letter-spacing: .5vw;
+    font-size: 9vw;
   }
 
   .blue-text {
@@ -3454,7 +3619,7 @@ img {
     background-color: var(--light-grey);
     width: 100%;
     height: 100vh;
-    padding-top: 25vh;
+    padding-top: 20vh;
     font-weight: 700;
     position: relative;
     top: auto;
@@ -3499,7 +3664,8 @@ img {
   }
 
   .span-text {
-    font-size: 10vw;
+    letter-spacing: .5vw;
+    font-size: 9vw;
     font-weight: 700;
   }
 
@@ -3743,7 +3909,7 @@ img {
     margin-right: 90px;
   }
 
-  ._2-lottie, ._3-lottie, ._5-lottie, ._4-lottie {
+  ._2-lottie, ._5-lottie, ._4-lottie {
     position: absolute;
     top: 0%;
     bottom: 0%;
@@ -3775,6 +3941,12 @@ img {
   .image-15 {
     margin-top: -20px;
     margin-bottom: -10px;
+  }
+
+  ._3-lottie-b {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
   }
 }
 
