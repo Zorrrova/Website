@@ -868,7 +868,7 @@ img {
 }
 
 .navbar {
-  background-color: rgba(221, 221, 221, 0);
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 0%;
   bottom: auto;
@@ -983,7 +983,7 @@ img {
   letter-spacing: 2px;
   border-style: none;
   padding-left: 0;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 130%;
   position: relative;
 }
@@ -1082,6 +1082,7 @@ img {
 .span-text {
   pointer-events: none;
   color: var(--light-grey);
+  text-align: left;
   font-size: 5rem;
   display: inline-block;
 }
@@ -1207,11 +1208,23 @@ img {
   height: 28px;
 }
 
+.menu-button {
+  position: absolute;
+  top: 8%;
+  bottom: auto;
+  left: auto;
+  right: 2%;
+}
+
 .div-block-15 {
   max-width: 700px;
   margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.icon-3 {
+  font-size: 40px;
 }
 
 .cell-5 {
@@ -1381,21 +1394,14 @@ img {
 }
 
 .icon-bg:hover {
-  background-color: var(--blue-grey);
-  color: var(--light-grey);
   transform: scale(1.1);
 }
 
 .icon-bg.big {
-  background-color: var(--light-grey);
-  color: var(--blue-grey);
-  width: 95px;
-  height: 95px;
-}
-
-.icon-bg.big:hover {
   background-color: var(--blue-grey);
   color: var(--light-grey);
+  width: 105px;
+  height: 105px;
 }
 
 .icon-hero {
@@ -1992,6 +1998,7 @@ img {
   margin-right: auto;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 
 .lottie-wrapper.test, .lottie-wrapper.test-copy {
@@ -2004,11 +2011,17 @@ img {
   right: 0%;
 }
 
-.lottie-wrapper.duo {
+.lottie-wrapper.trio {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   max-height: 120vh;
+}
+
+.lottie-wrapper.duo {
+  width: 50%;
+  height: 100vh;
 }
 
 .vrideo-promo {
@@ -2215,14 +2228,21 @@ img {
   opacity: 1;
   filter: grayscale(0%);
   cursor: pointer;
-  width: 100vw;
+  object-fit: cover;
+  width: 178vh;
+  height: 100%;
   transition: all .3s;
-  position: static;
+  position: absolute;
   top: 0%;
   bottom: 0%;
-  left: 0%;
-  right: 0%;
+  left: auto;
+  right: auto;
   overflow: hidden;
+}
+
+.lottie.single {
+  width: 100vw;
+  position: static;
 }
 
 ._5-lottie, ._4-lottie {
@@ -2523,19 +2543,43 @@ img {
 
 .mini-wrap {
   z-index: 0;
+  filter: grayscale(90%);
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
   max-width: 50%;
   height: 100%;
   max-height: 100vh;
+  transition: all .5s;
   display: flex;
   position: relative;
   overflow: hidden;
 }
 
-.mini-wrap._2 {
+.mini-wrap:hover {
+  filter: grayscale(0%);
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.mini-wrap._2, .mini-wrap._3 {
   justify-content: center;
   align-items: center;
+}
+
+.mini-wrap._3:hover {
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.mini-wrap.duo {
+  max-width: 100%;
+  transition-duration: .45s;
+}
+
+.mini-wrap.duo:hover {
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
 .player-vimeo {
@@ -2546,6 +2590,12 @@ img {
   height: 100%;
   display: flex;
   overflow: hidden;
+}
+
+.duo-video {
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
@@ -2925,11 +2975,14 @@ img {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
     max-height: none;
+    overflow: hidden;
   }
 
-  .lottie-wrapper.duo {
+  .lottie-wrapper.trio {
+    width: 100%;
     height: 200vh;
     max-height: 100vh;
   }
@@ -3019,6 +3072,10 @@ img {
     right: auto;
   }
 
+  .lottie.single {
+    width: 178vh;
+  }
+
   ._5-lottie, ._4-lottie {
     object-fit: cover;
     top: 0%;
@@ -3044,6 +3101,7 @@ img {
   }
 
   .mini-wrap {
+    filter: grayscale(0%);
     width: 100%;
     max-width: 100%;
   }
@@ -3306,6 +3364,16 @@ img {
     height: 120vh;
   }
 
+  .lottie-wrapper.trio {
+    flex-flow: row;
+    max-height: 100vh;
+  }
+
+  .lottie-wrapper.duo {
+    width: 100%;
+    height: 85vh;
+  }
+
   .wrapper-play {
     margin-top: -90px;
   }
@@ -3366,6 +3434,14 @@ img {
     top: 0%;
   }
 
+  .lottie {
+    height: 100%;
+  }
+
+  .lottie.vertical {
+    height: 140%;
+  }
+
   .wrapper-play-icon {
     margin-top: -90px;
   }
@@ -3374,12 +3450,16 @@ img {
     width: 5vw;
     margin-right: 1.8vw;
   }
+
+  .duo-video {
+    flex-flow: column;
+  }
 }
 
 @media screen and (max-width: 479px) {
   .container {
     height: 100%;
-    padding: 0 0 15px;
+    padding: 0 0;
   }
 
   .text-span {
@@ -3643,7 +3723,7 @@ img {
   }
 
   .tag-sm.intro {
-    font-size: 4.8vw;
+    font-size: 7vw;
   }
 
   .col-content-parent-b {
@@ -3878,6 +3958,11 @@ img {
     font-weight: 300;
   }
 
+  .lottie-wrapper.trio {
+    flex-flow: column;
+    max-height: 200vh;
+  }
+
   ._4-online {
     margin-right: 25px;
   }
@@ -3909,7 +3994,17 @@ img {
     margin-right: 90px;
   }
 
-  ._2-lottie, ._5-lottie, ._4-lottie {
+  ._2-lottie {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+  }
+
+  .lottie.vertical {
+    height: 180vw;
+  }
+
+  ._5-lottie, ._4-lottie {
     position: absolute;
     top: 0%;
     bottom: 0%;
