@@ -1730,6 +1730,7 @@ img {
 
 .form-tagline.success {
   max-width: 18em;
+  font-size: 1.2rem;
 }
 
 .modal-content-wrapper {
@@ -1808,8 +1809,8 @@ img {
 .heading {
   text-align: center;
   margin-top: 0;
-  margin-bottom: .75rem;
-  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
 }
 
 .form-main {
