@@ -2227,6 +2227,7 @@ img {
 .block-icon-hover {
   z-index: 0;
   box-shadow: none;
+  opacity: 0;
   color: var(--black-custom);
   border-radius: 1rem;
   position: absolute;
