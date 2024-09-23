@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Mon Sep 23 2024 05:45:54 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Sep 23 2024 05:56:39 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66eda9035a0e6b66af0a3c02" data-wf-site="66eda9035a0e6b66af0a3c05">
 <head>
   <meta charset="utf-8">
@@ -1357,6 +1357,7 @@ Webflow.push(function () {
   $("[vimeo1=unmute]").click(function() {
     player1.setCurrentTime(0);
     player1.setMuted(false);
+    player1.play();
   });
   $("[vimeo1=play]").click(function() {
     player1.play();
@@ -1368,6 +1369,7 @@ Webflow.push(function () {
   $("[vimeo2=unmute]").click(function() {
     player2.setCurrentTime(0);
     player2.setMuted(false);
+    player2.play();
   });
   $("[vimeo2=play]").click(function() {
     player2.play();
