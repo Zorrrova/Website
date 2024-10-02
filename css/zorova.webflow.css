@@ -225,7 +225,6 @@ img {
   padding-bottom: .625rem;
   position: static;
   inset: 70% auto auto 15%;
-  overflow: hidden;
 }
 
 .mask-heading.up {
